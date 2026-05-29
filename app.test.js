@@ -43,3 +43,13 @@ describe("/gigs", () => {
         expect(response.status).toBe(200);
     })
 })
+
+	// /gigs/:id	GET	Not applicable	{"gig": {Gig where the id matches the one provided in the url}}
+
+describe("/gigs/:id", () => {
+    test("/GET, it responds with the gig where the id matches the one provided in the url", async () => {
+        const response = await request(app).get("/gigs/3");
+        expect(response.body).toEqual({"gig": gigs[2]});
+        expect(response.status).toBe(200);
+    })
+})
