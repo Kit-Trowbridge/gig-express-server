@@ -45,4 +45,8 @@ app.get("/gigs", (req, res) => {
   res.send({gigs})
 })
 
+app.get("/gigs/:id", (req, res) => {
+  const gig = gigs.filter((gig) => {return gig.id === req.id});
+  res.send(gig);
+})
 module.exports = app;
