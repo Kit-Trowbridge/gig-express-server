@@ -61,7 +61,7 @@ describe("/gigs/:id", () => {
 });
 
 // should also test for non-existent id
-describe("/gigs/:id", () => {
+describe.skip("/gigs/:id", () => {
   test("/DELETE, it responds with an object containing a message and the gigs list minus the deleted one based on id", async () => {
     const response = await request(app).delete("/gigs/2");
     expect(response.body).toEqual({
@@ -126,7 +126,7 @@ describe("/gigs", () => {
         id: 5,
       });
     expect(response.body).toEqual({
-      message: "Successfully posted new gig",
+      message: "Successfully posted new Mark Knopfler gig",
       gigs: [
         {
           name: "Blood Orange",

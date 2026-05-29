@@ -66,4 +66,10 @@ app.delete("/gigs/:id", (req, res) => {
   res.send({ message: `Successfully deleted ${gig.name} gig`, gigs });
 });
 
+app.post("/gigs", (req, res) => {
+  const gig = req.body
+  gigs.push(gig)
+  res.send({message: `Successfully posted new ${gig.name} gig`, gigs})
+})
+
 module.exports = app;
