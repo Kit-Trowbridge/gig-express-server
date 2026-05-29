@@ -72,4 +72,4 @@ app.post("/gigs", (req, res) => {
   res.send({message: `Successfully posted new ${gig.name} gig`, gigs})
 })
 
-module.exports = app;
+module.exports = { app, gigs };
