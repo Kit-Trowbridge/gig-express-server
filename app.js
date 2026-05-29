@@ -33,12 +33,16 @@ const gigs = [
   },
   { 
     name: "Niagara",
-    image: "https://cdn-images.dzcdn.net/images/artist/d80185b76347931bcd9a851386e54549/1900x1900-000000-80-0-0.jpg",
+    image: "https://fastly-s3.allmusic.com/artist/mn0000330945/400/K-oL6-OtSnrgT2GAYq3wWz6KsMttLlyBmmVTZ6_CLs0=.jpg",
     description: "Synth-pop",
     date: Temporal.PlainDate.from({year: 2026, month: 6, day: 10}),
     location: "Paris, FR",
     id: 4
   }
 ] 
+
+app.get("/gigs", (req, res) => {
+  res.send({gigs})
+})
 
 module.exports = app;
