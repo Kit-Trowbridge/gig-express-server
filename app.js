@@ -50,4 +50,12 @@ app.get("/gigs/:id", (req, res) => {
   res.send({gig});
 })
 
+app.delete("/gigs/:id", (req, res) => {
+  const gig = gigs.filter((gig) => {return gig.id === parseInt(req.params.id)})[0];
+  const gigIndex = gigs.indexOf(gig)
+  // removes gig from gigs
+  gigs.splice(gigIndex, 1)
+  res.send({message: "Successfully deleted Discovery Zone gig", gigs})
+})
+
 module.exports = app;
