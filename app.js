@@ -63,7 +63,7 @@ app.delete("/gigs/:id", (req, res) => {
   const gigIndex = gigs.indexOf(gig);
   // removes gig from gigs
   gigs.splice(gigIndex, 1);
-  res.send({ message: "Successfully deleted Discovery Zone gig", gigs });
+  res.send({ message: `Successfully deleted ${gig.name} gig`, gigs });
 });
 
 module.exports = app;
