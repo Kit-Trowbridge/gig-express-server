@@ -46,7 +46,7 @@ app.get("/gigs", (req, res) => {
 })
 
 app.get("/gigs/:id", (req, res) => {
-  const gig = gigs.filter((gig) => {return gig.id === req.id});
-  res.send(gig);
+  const gig = gigs.filter((gig) => {return gig.id === parseInt(req.params.id)})[0];
+  res.send({gig});
 })
 module.exports = app;
